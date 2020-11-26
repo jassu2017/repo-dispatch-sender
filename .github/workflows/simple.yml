@@ -12,11 +12,18 @@ jobs:
         run: |
           node -v
           npm -v
-      # adding another shell     
+# adding another shell     
       - name: Python Commands
         run: |
           import platform
           print(platform.processor())
         shell: python
-
+# adding another job for windows os/bash shell
+  run-windows-bash-command:
+    runs-on: windows-latest
+    steps:
+      - name: directory power shell
+        run: Get-Location
+      - name: directory bash
+        run: pwd  
 
