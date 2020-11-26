@@ -1,7 +1,5 @@
 name: Action Workflow
-
 on: [push]
-
 jobs:
   run-github-actions:
     runs-on: ubuntu-latest
@@ -10,7 +8,11 @@ jobs:
       - name: List files
         run: |
           pwd
-          ls -a
+          ls -a  # printing the env vars of github actions
+          echo $GITHUB_SHA
+          echo $GITHUB_REPOSITORY
+          echo $GUTHUB_WORKSPACE
+          echo "${{ github.token }}"
         
     # list files after checkout
       - name: checkout
