@@ -11,7 +11,7 @@ jobs:
           ls -a  # printing the env vars of github actions
           echo $GITHUB_SHA
           echo $GITHUB_REPOSITORY
-          echo $GUTHUB_WORKSPACE
+          echo $GITHUB_WORKSPACE
           echo "${{ github.token }}"
         
     # list files after checkout
