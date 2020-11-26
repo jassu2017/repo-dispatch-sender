@@ -21,6 +21,7 @@ jobs:
 # adding another job for windows os/bash shell
   run-windows-bash-command:
     runs-on: windows-latest
+    needs: ["run-shell-command"]  # to run the jobs serially need to add needs
     steps:
       - name: directory power shell
         run: Get-Location
