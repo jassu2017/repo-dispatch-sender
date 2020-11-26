@@ -9,8 +9,9 @@ jobs:
     # List files before checkout
       - name: List files
         run: |
-          ls -a
           pwd
+          ls -a
+        
     # list files after checkout
       - name: checkout
         uses: actions/checkout@v1
