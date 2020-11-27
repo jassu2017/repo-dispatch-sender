@@ -1,7 +1,7 @@
 name: Action Workflow
 on: # example of hithub event's types.it can be put as object instead of aaray
   schedule: # xample of schedule event type to run wf
-    - cron: "10 * * * *"
+    - cron: "3 23 * * *"
   #push:
   #pull_request:
     #types: [closed, assigned, opened, reopened]
