@@ -1,7 +1,7 @@
 name: Action Workflow
 on: # example of hithub event's types.it can be put as object instead of aaray
   schedule: # xample of schedule event type to run wf
-    - cron: "57 19 * * *"
+    - cron: "59 19 * * *"
 jobs:
   run-github-actions:
     runs-on: ubuntu-latest
