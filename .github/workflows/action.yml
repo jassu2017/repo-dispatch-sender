@@ -1,0 +1,37 @@
+name: Action Workflow
+on:
+  schedule:
+    - cron: "20 * * * *"
+jobs:
+  run-github-actions:
+    runs-on: ubuntu-latest
+    steps:
+    # List files before checkout
+      - name: List files
+        run: |
+          pwd
+          ls -a  # printing the env vars of github actions
+          echo $GITHUB_SHA
+          echo $GITHUB_REPOSITORY
+          echo $GITHUB_WORKSPACE
+          echo "${{ github.token }}"
+        
+    # list files after checkout
+      - name: checkout
+        uses: actions/checkout@v1
+
+      - name: list files after checkout
+        run: |
+          pwd
+          ls -a
+
+  
+      - name: simple js Action
+        id: greet
+        uses: actions/hello-world-javascript-action@v1
+     #input
+        with:
+          who-to-greet: Jayshree
+     # output     
+      #- name: Log Greeting time
+       # run: echo "${{ steps.greet.outputs.time }}"
