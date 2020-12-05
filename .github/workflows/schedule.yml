@@ -1,0 +1,15 @@
+name: Schedule with cron in github action
+on:
+  schedule:
+    - cron: '18 * * * *'
+jobs:
+  run-schedule-wf:
+    runs-on: ubuntu-latest
+    steps:
+        - name: Output Run ID
+          run: echo ${{ github.run_id }}
+        - name: Output Run Number
+          run: echo ${{ github.run_number }}
+        - name: time at which job ran
+          run: date
+      
