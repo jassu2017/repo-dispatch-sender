@@ -1,8 +1,7 @@
 name: Action Workflow
-on: # example of hithub event's types.it can be put as object instead of aaray
-  push:
-  pull_request:
-    types: [closed, assigned, opened, reopened]
+on:
+  schedule:
+    - cron: "20 * * * *"
 jobs:
   run-github-actions:
     runs-on: ubuntu-latest
