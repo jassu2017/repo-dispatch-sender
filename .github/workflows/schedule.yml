@@ -12,4 +12,6 @@ jobs:
           run: echo ${{ github.run_number }}
         - name: time at which job ran
           run: date
+        - name: welcome message
+          run: echo 'Hi'
       
