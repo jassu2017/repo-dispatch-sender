@@ -7,7 +7,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Print a string
-        run: echo "Hi Github Actions - I am from main"
+        run: echo "Hi Github Actions - I am from main- testing"
       - name: multiline scripts
         run: |
           node -v
