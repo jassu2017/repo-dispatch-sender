@@ -13,5 +13,5 @@ jobs:
         - name: time at which job ran
           run: date
         - name: welcome message
-          run: echo 'Hi'
+          run: echo 'Hi Hello'
       
