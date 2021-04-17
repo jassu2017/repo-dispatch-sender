@@ -17,6 +17,8 @@ jobs:
       steps:
       - name: checkout 
         uses: actions/checkout@v2
+      - name: Print the worspace
+        run: echo ${{ github.workspace }}
       - name: run the script
         run: |
            chmod +x scripts/param-script.sh
