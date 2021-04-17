@@ -1,7 +1,7 @@
 name: parameterized shell script 
 
 on: 
-  workflow_disptach:
+  workflow_dispatch:
     inputs:
       name:
         description: 'Enter the name'
