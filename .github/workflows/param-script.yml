@@ -15,7 +15,9 @@ jobs:
     run-shell-script:
       runs-on: ubuntu-latest
       steps:
+      - name: checkout 
+        uses: actions/checkout@v2
       - name: run the script
         run: |
-           chmod +x ./scripts/param-script.sh
+           chmod +x /scripts/param-script.sh
            ./scripts/param-script.sh {{ github.event.inputs.name }}
