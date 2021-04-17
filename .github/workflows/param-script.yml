@@ -17,6 +17,5 @@ jobs:
       steps:
       - name: run the script
         run: |
-          shell: bash
-          chmod +x ./param-script.sh
-          ./param-script.sh {{ github.event.inputs.name }}
+           chmod +x .. /param-script.sh
+           sh param-script.sh {{ github.event.inputs.name }}
