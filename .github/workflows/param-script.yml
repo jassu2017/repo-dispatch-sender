@@ -8,30 +8,17 @@ on:
         required: true
         default: 'github-actions'
 
-      
-
-
 jobs:
     run-shell-script:
       runs-on: ubuntu-latest
       steps:
       - name: checkout 
         uses: actions/checkout@v2
-      - name: Print the worspace
+      - name: Print the workspace
         run: echo ${{ github.workspace }}
       - name: run the script
         run: |
            chmod +x scripts/param-script.sh
            ./scripts/param-script.sh ${{ github.event.inputs.name }}
 
-      
-
-
-jobs:
-    run-shell-script:
-      runs-on: ubuntu-latest
-      steps:
-      - name: run the script
-        run: |
-         chmod +x param-script.sh
-         ./param-script.sh {{ github.event.inputs.name }}
+    
