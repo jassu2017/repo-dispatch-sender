@@ -1,0 +1,21 @@
+name: parameterized shell script 
+
+on: 
+  workflow_disptach:
+    inputs:
+      name:
+        description: 'Enter the name'
+        required: true
+        default: 'github-actions'
+
+      
+
+
+jobs:
+    run-shell-script:
+      runs-on: ubuntu-latest
+      steps:
+      - name: run the script
+        run: |
+         chmod +x param-script.sh
+         ./param-script.sh {{ github.event.inputs.name }}
