@@ -19,5 +19,5 @@ jobs:
         uses: actions/checkout@v2
       - name: run the script
         run: |
-           chmod +x /scripts/param-script.sh
+           chmod +x scripts/param-script.sh
            ./scripts/param-script.sh {{ github.event.inputs.name }}
