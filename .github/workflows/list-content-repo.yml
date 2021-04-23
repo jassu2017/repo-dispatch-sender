@@ -1,0 +1,21 @@
+name: Repository Dispatch
+
+on:
+  push:
+    branches: [ main ]
+  repository_dispatch:
+    types: my-Event
+    
+
+jobs:
+  my-Event:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Update the file content in other repository
+        run: |
+          chmod +x scripts/list_content_repo.sh
+          ./scripts/list_content_repo.sh
+        with:
+          my_token: ${{ secrets.PASSPHRASE }}
+        env: 
+          my_token: ${{ secrets.PASSPHRASE }}
