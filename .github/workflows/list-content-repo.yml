@@ -15,7 +15,7 @@ jobs:
         run: |
           chmod +x scripts/list_content_repo.sh
           ./scripts/list_content_repo.sh
-        with:
-          my_token: ${{ secrets.PASSPHRASE }}
+        #with:
+         # my_token: ${{ secrets.PASSPHRASE }}
         env: 
           my_token: ${{ secrets.PASSPHRASE }}
