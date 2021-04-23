@@ -1,4 +1,4 @@
 #!/bin/bash
 
-result=`curl -H "Accept: application/vnd.github.v3+json" https://api.github.com/repos/jassu2017/maven-project/contents/`
+result=`curl -H "Accept: application/vnd.github.v3+json" https://api.github.com/repos/jassu2017/maven-project/contents/ | json_pp`
 echo $result
