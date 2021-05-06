@@ -14,7 +14,7 @@ jobs:
     steps:
       - name: Build Chain
         id: build-chain
-        uses: ginxo/github-action-build-chain@v2.4
+        uses: kiegroup/github-action-build-chain@v2.4
         with:
           definition-file: https://github.com/jassu2017/maven-simple/master/blob/.github/workflows/main.yml
         env:
