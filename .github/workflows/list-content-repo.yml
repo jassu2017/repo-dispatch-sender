@@ -3,24 +3,22 @@ name: Repository Dispatch
 on:
   push:
     branches: [ main ]
-  #repository_dispatch:
+  repository_dispatch:
     #types: my-Event
-   # types: [ build, release]
+    #types: [ build, release]
     
 
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: Build Chain
-        id: build-chain
-        uses: kiegroup/github-action-build-chain@v2.4
-        with:
-          definition-file: 'https://github.com/jassu2017/maven-simple/master/blob/.github/workflows/main.yml'
-          #flow-type: 'fdb'
-        env:
-          GITHUB_TOKEN: "${{ secrets.PASSPHRASE }}"
-      
+      - name: run another file in different repo
+        run: |
+          curl \
+           -H "Accept: application/vnd.github.v3+json" \
+           https://api.github.com/repos/jassu2017/maven-simple/actions/runs/1
+           
+          
       #- name: checkout
        # uses: actions/checkout@v2
       #- name: Update the file content in other repository
