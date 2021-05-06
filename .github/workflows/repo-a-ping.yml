@@ -15,7 +15,7 @@ jobs:
         run: |
           curl -X POST https://api.github.com/repos/jassu2017/maven-simple/dispatches \
           -H 'Accept: application/vnd.github.everest-preview+json' \
-          -u ${{ secrets.PASSPHRASE }} \
+          -u ${{ secrets.ACCESS_TOKEN_REPO_DISPATCH }} \
           --data '{"event_type": "ping", "client_payload": { "repository": "'"$GITHUB_REPOSITORY"'" }}'
       - name: ACK - Acknowledge pong from remote repository
         if: github.event.action == 'pong'
@@ -23,5 +23,5 @@ jobs:
           echo "PONG received from '${{ github.event.client_payload.repository }}'" && \
           curl -X POST https://api.github.com/repos/jassu2017/maven-simple/dispatches \
           -H 'Accept: application/vnd.github.everest-preview+json' \
-          -u ${{ secrets.PASSPHRASE }} \
+          -u ${{ secrets.ACCESS_TOKEN_REPO_DISPATCH }} \
           --data '{"event_type": "ack", "client_payload": { "repository": "'"$GITHUB_REPOSITORY"'" }}'
