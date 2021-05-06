@@ -17,7 +17,7 @@ jobs:
         uses: kiegroup/github-action-build-chain@v2.4
         with:
           definition-file: 'https://github.com/jassu2017/maven-simple/master/blob/.github/workflows/main.yml'
-          flow-type: 'fdb'
+          #flow-type: 'fdb'
         env:
           GITHUB_TOKEN: "${{ secrets.PASSPHRASE }}"
       
