@@ -3,21 +3,30 @@ name: Repository Dispatch
 on:
   push:
     branches: [ main ]
-  repository_dispatch:
-    types: my-Event
+  #repository_dispatch:
+    #types: my-Event
+   # types: [ build, release]
     
 
 jobs:
-  my-Event:
+  build:
     runs-on: ubuntu-latest
     steps:
-      - name: checkout
-        uses: actions/checkout@v2
-      - name: Update the file content in other repository
-        run: |
-          chmod +x scripts/list_content_repo.sh
-          ./scripts/list_content_repo.sh
+      - name: Build Chain
+        id: build-chain
+        uses: ginxo/github-action-build-chain@BXMSPROD-1025
+        with:
+          definition-file: https://github.com/jassu2017/maven-simple/blob/master/.github/workflows/main.yml
+        env:
+          GITHUB_TOKEN: "${{ secrets.PASSPHRASE }}"
+      
+      #- name: checkout
+       # uses: actions/checkout@v2
+      #- name: Update the file content in other repository
+       # run: |
+        #  chmod +x scripts/list_content_repo.sh
+         # ./scripts/list_content_repo.sh
         #with:
          # my_token: ${{ secrets.PASSPHRASE }}
-        env: 
-          my_token: ${{ secrets.PASSPHRASE }}
+        #env: 
+         # my_token: ${{ secrets.PASSPHRASE }}
