@@ -1,4 +1,4 @@
-name: Alert parent repository on push
+name: Alert parent repository on push asada
 on: push
 
 jobs:
