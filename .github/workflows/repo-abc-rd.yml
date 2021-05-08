@@ -1,7 +1,7 @@
 name: Repo to start the dispatch action
 
 on:
-  push:
+  #push:
   repository_dispatch:
 
 jobs: 
