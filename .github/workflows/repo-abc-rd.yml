@@ -1,4 +1,4 @@
-name: Repo to start the dispatch actions
+name: Repo to start the dispatch action
 
 on:
   push:
