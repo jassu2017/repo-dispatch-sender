@@ -1,6 +1,14 @@
 name: Repository Dispatch
 
-on: [push, workflow_dispatch]
+on: 
+  workflow_dispatch:
+    inputs:
+      name:
+        description: "Enter name"
+        required: true
+        default: 'jayshree'
+      
+    
 
 jobs:
   build:
