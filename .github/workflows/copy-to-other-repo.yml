@@ -8,15 +8,6 @@ jobs:
     steps:
     - name: checkout 
       uses: actions/checkout@v2
-    
-    - name: create directory if it is not present
-      run: |
-          if [ ! -e new_folder ] 
-          then
-            mkdir new_folder            
-          else
-            echo "new_folder directory is already present."
-          fi
           
     - name: copy the file from another directory
       uses: dmnemec/copy_file_to_another_repo_action@main
