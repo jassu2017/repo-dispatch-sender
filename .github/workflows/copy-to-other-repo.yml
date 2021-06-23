@@ -18,3 +18,6 @@ jobs:
           source_file: 'test.txt'
           destination_repo: 'jassu2017/github-actions-test20'
           destination_folder: 'new_folder'
+          user_email: 'jayshree.prasad@live.com'
+          user_name: 'jassu2017'
+          commit_message: 'A custom message for the commit'
