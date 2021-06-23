@@ -1,16 +1,10 @@
 name: Repository Dispatch
 
 on: 
-  workflow_dispatch:
-    inputs:
-      name:
-        description: "Enter name"
-        required: true
-        default: 'jayshree'
-      
-    
-
+  [ pull_request, workflow_dispatch ]
+  
 jobs:
+
   build:
     runs-on: ubuntu-latest
     steps:
