@@ -13,6 +13,7 @@ jobs:
       uses: dmnemec/copy_file_to_another_repo_action@main
       env:
           ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           
       with:
           source_file: 'test.txt'
