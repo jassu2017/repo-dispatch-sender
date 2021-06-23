@@ -1,6 +1,7 @@
 name: Repository Dispatch Triggered
 
-on: [repository_dispatch]
+on: pull_request 
+#[repository_dispatch]
 
 jobs:
   build:
