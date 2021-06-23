@@ -12,7 +12,7 @@ jobs:
     - name: copy the file from another directory
       uses: dmnemec/copy_file_to_another_repo_action@main
       env:
-          ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+          ACCESS_TOKEN: ${{ secrets.repository_dispatch_example }}
           
       with:
           source_file: 'test.txt'
