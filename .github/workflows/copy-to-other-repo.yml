@@ -7,10 +7,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: checkout 
-        uses: actions/checkout@v2
+      uses: actions/checkout@v2
     
     - name: create directory if it is not present
-        run: |
+      run: |
           if [ ! -e new_folder ] 
           then
             mkdir new_folder            
@@ -18,12 +18,12 @@ jobs:
             echo "new_folder directory is already present."
           fi
           
-     - name: copy the file from another directory
-        uses: dmnemec/copy_file_to_another_repo_action@main
-        env:
+    - name: copy the file from another directory
+      uses: dmnemec/copy_file_to_another_repo_action@main
+      env:
           ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
           
-        with:
+      with:
           source_file: 'test.txt'
           destination_repo: 'jassu2017/github-actions-test20'
           destination_folder: 'new_folder'
