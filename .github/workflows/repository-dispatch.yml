@@ -1,7 +1,7 @@
 name: Repository Dispatch
 
 on: 
-  [ push, workflow_dispatch ]
+  [ pull_request, workflow_dispatch ]
   
 jobs:
 
