@@ -1,4 +1,4 @@
-name: copy to other repo
+name: copy to other repository
 
 on: push
 
