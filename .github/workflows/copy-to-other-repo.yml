@@ -16,7 +16,7 @@ jobs:
          src_path: hi.txt
          dst_path: /new_folder/
          src_branch: main
-         dest_branch: main
+         dst_branch: main
          dst_owner: jassu2017
          dst_repo_name: github-actions-test20
       # uses: dmnemec/copy_file_to_another_repo_action@main
