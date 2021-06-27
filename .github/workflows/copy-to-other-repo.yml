@@ -9,16 +9,23 @@ jobs:
     - name: checkout 
       uses: actions/checkout@v2
           
-    - name: copy the file from another directory
-      uses: dmnemec/copy_file_to_another_repo_action@main
-      env:
-          ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          
+    - name: copy the file from one repo to  another directory
+      uses: andstor/copycat-action@v3
       with:
-          source_file: 'test.txt'
-          destination_repo: 'jassu2017/github-actions-test20'
-          destination_folder: 'new_folder'
-          user_email: 'jayshree.prasad@live.com'
-          user_name: 'jassu2017'
-          commit_message: 'A custom message for the commit'
+         personal_token: ${{ secrets.PERSONAL_TOKEN }}
+         src_path: hi.txt
+         dst_path: /new_folder/
+         dst_owner: jassu2017
+         dst_repo_name: github-actions-test20
+      # uses: dmnemec/copy_file_to_another_repo_action@main
+      # env:
+      #     ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+      #     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          
+      # with:
+      #     source_file: 'test.txt'
+      #     destination_repo: 'jassu2017/github-actions-test20'
+      #     destination_folder: 'new_folder'
+      #     user_email: 'jayshree.prasad@live.com'
+      #     user_name: 'jassu2017'
+      #     commit_message: 'A custom message for the commit'
